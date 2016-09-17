@@ -48,3 +48,16 @@ gem 'bootstrap-generators', github: 'gstark/bootstrap-generators', branch: 'incl
 gem 'bootstrap-social-rails'
 gem 'font-awesome-rails'
 gem 'haml-rails'
+
+# Live Reload
+group :development do
+  gem "guard", ">= 2.2.2", require: false
+  gem "guard-livereload", require: false
+  gem "rack-livereload"
+  gem "rb-fsevent", require: false
+end
+
+# Foreman
+group :development do
+  gem "foreman"
+end
