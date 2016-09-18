@@ -1,0 +1,21 @@
+@import "variables";
+@import "mixins";
+@import "fonts";
+
+// Ensure we leave space at the top of the page for the nav
+.page-header {
+  margin-top: 80px;
+  @media(min-width:768px) {
+    margin-top: 120px;
+  }
+}
+
+footer {
+  padding: 10px 0;
+}
+
+.btn-default {
+  color: white;
+  letter-spacing: 0.2em;
+  background-color: lighten($primary, 10%);
+}

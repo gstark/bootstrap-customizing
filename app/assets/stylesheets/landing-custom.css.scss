@@ -1,0 +1,23 @@
+@import "variables";
+@import "mixins";
+@import "fonts";
+
+// On the landing page we want the background to be transparent at wide screen
+.navbar-custom {
+  @media(min-width:768px) {
+    background: transparent;
+  }
+}
+
+footer {
+  padding: 30px 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    text-transform: uppercase;
+}

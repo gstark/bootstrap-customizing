@@ -9,39 +9,39 @@
     %meta{:content => "", :name => "author"}/
     %title Wizard Spot
     = javascript_include_tag 'application', 'data-turbolinks-track' => true
-    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
+    = stylesheet_link_tag    'landing', media: 'all', 'data-turbolinks-track' => true
     = csrf_meta_tags
-  %body
+  %body#page-top{"data-spy" => "scroll", "data-target" => ".navbar-fixed-top"}
     / Navigation
     %nav.navbar.navbar-custom.navbar-fixed-top.navbar{:role => "navigation"}
       .container
         .navbar-header
           %button.navbar-toggle{"data-target" => ".navbar-main-collapse", "data-toggle" => "collapse", :type => "button"}
             %i.fa.fa-bars
-          = link_to root_path, class: "navbar-brand" do
+          %a.navbar-brand.page-scroll{:href => "#page-top"}
             %i.fa.fa-magic
             %span.light Wizard
             Spot
         / Collect the nav links, forms, and other content for toggling
         .collapse.navbar-collapse.navbar-right.navbar-main-collapse
           %ul.nav.navbar-nav
+            / Hidden li included to remove active class from about link when scrolled up past about section
+            %li.hidden
+              %a{:href => "#page-top"}
             %li
-              = link_to books_path do
+              %a.page-scroll{:href => "#about"}
                 %i.fa.fa-info-circle
-                Books
+                About Us
             %li
-              = link_to "/logout" do
+              %a.page-scroll{:href => "#download"}
                 %i.fa.fa-user-plus
-                Logout
-    .container
-      - flash.each do |name, msg|
-        = content_tag :div, class: "alert alert-#{name == :error ? "danger" : "success" } alert-dismissable", role: "alert" do
-          %button.close{type: "button", data: {dismiss: "alert"} }
-            %span{aria: {hidden: "true"} } &times;
-            %span.sr-only Close
-          = msg
-      = yield
+                Sign Up
+            %li
+              %a.page-scroll{:href => "#contact"}
+                %i.fa.fa-envelope
+                Contact
+    = yield
     / Footer
-    %footer.navbar-fixed-bottom
+    %footer
       .container.text-center
         %p Copyright © Wizard Spot 2016
