@@ -1,88 +1,60 @@
-!!!
-%html{:lang => "en"}
-  %head
-    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
-    %meta{:charset => "utf-8"}/
-    %meta{:content => "IE=edge", "http-equiv" => "X-UA-Compatible"}/
-    %meta{:content => "width=device-width, initial-scale=1", :name => "viewport"}/
-    %meta{:content => "", :name => "description"}/
-    %meta{:content => "", :name => "author"}/
-    %title Wizard Spot
-    = javascript_include_tag 'application', 'data-turbolinks-track' => true
-    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
-  %body#page-top{"data-spy" => "scroll", "data-target" => ".navbar-fixed-top"}
-    / Navigation
-    %nav.navbar.navbar-custom.navbar-fixed-top{:role => "navigation"}
-      .container
-        .navbar-header
-          %button.navbar-toggle{"data-target" => ".navbar-main-collapse", "data-toggle" => "collapse", :type => "button"}
-            %i.fa.fa-bars
-          %a.navbar-brand.page-scroll{:href => "#page-top"}
-            %i.fa.fa-magic
-            %span.light Wizard
-            Spot
-        / Collect the nav links, forms, and other content for toggling
-        .collapse.navbar-collapse.navbar-right.navbar-main-collapse
-          %ul.nav.navbar-nav
-            / Hidden li included to remove active class from about link when scrolled up past about section
-            %li.hidden
-              %a{:href => "#page-top"}
-            %li
-              %a.page-scroll{:href => "#about"}
-                %i.fa.fa-info-circle
-                About
-            %li
-              %a.page-scroll{:href => "#download"}
-                %i.fa.fa-user-plus
-                Sign Up
-            %li
-              %a.page-scroll{:href => "#contact"}
-                %i.fa.fa-envelope
-                Contact
-    %header.intro
-      .intro-body
-        .container
-          .row
-            .col-md-8.col-md-offset-2
-              %h1.brand-heading Wizard Spot
-              %a.btn.btn-circle.page-scroll{:href => "#about"}
-                %i.fa.fa-bolt.animated
-    / About Section
-    %section#about.container.content-section.text-center
+- content_for :nav_links do
+  / Hidden li included to remove active class from about link when scrolled up past about section
+  %li.hidden
+    %a{:href => "#page-top"}
+  %li
+    %a.page-scroll{:href => "#about"}
+      %i.fa.fa-info-circle
+      About Us
+  %li
+    %a.page-scroll{:href => "#download"}
+      %i.fa.fa-user-plus
+      Sign Up
+  %li
+    %a.page-scroll{:href => "#contact"}
+      %i.fa.fa-envelope
+      Contact
+
+%header.intro
+  .intro-body
+    .container
       .row
-        .col-lg-8.col-lg-offset-2
-          %h2 About Wizard Spot
-          %p
-            Wizard Spot is Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-    / Download Section
-    %section#download.content-section.text-center
-      .download-section
-        .container
-          .col-lg-8.col-lg-offset-2
-            %h2 We work with the top retailers
-            %a.btn.btn-default.btn-lg{:href => "http://amazon.com"} Visit Our Partners
-    / Contact Section
-    %section#contact.container.content-section.text-center
-      .row
-        .col-lg-8.col-lg-offset-2
-          %h2 Contact Wizard Spot
-          %p Feel free to email us to provide some feedback on our service, or to just say hello!
-          %p
-            %a{:href => "mailto:info@wizardspot.com"} info@wizardspot.com
-          %ul.list-inline.banner-social-buttons
-            %li
-              %a.btn.btn-default.btn-lg{:href => "https://twitter.com/"}
-                %i.fa.fa-twitter.fa-fw
-                %span.network-name Twitter
-            %li
-              %a.btn.btn-default.btn-lg{:href => "https://github.com"}
-                %i.fa.fa-github.fa-fw
-                %span.network-name Github
-            %li
-              %a.btn.btn-default.btn-lg{:href => "https://plus.google.com"}
-                %i.fa.fa-google-plus.fa-fw
-                %span.network-name Google+
-    / Footer
-    %footer
-      .container.text-center
-        %p Copyright © Wizard Spot 2016
+        .col-md-8.col-md-offset-2
+          %h1.brand-heading Wizard Spot
+          %a.btn.btn-circle.page-scroll{:href => "#about"}
+            %i.fa.fa-bolt.animated
+/ About Section
+%section#about.container.content-section.text-center
+  .row
+    .col-lg-8.col-lg-offset-2
+      %h2 About Wizard Spot
+      %p
+        Wizard Spot is Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+/ Download Section
+%section#download.content-section.text-center
+  .download-section
+    .container
+      .col-lg-8.col-lg-offset-2
+        %h2 We work with the top retailers
+        %a.btn.btn-default.btn-lg{:href => "http://amazon.com"} Visit Our Partners
+/ Contact Section
+%section#contact.container.content-section.text-center
+  .row
+    .col-lg-8.col-lg-offset-2
+      %h2 Contact Wizard Spot
+      %p Feel free to email us to provide some feedback on our service, or to just say hello!
+      %p
+        %a{:href => "mailto:info@wizardspot.com"} info@wizardspot.com
+      %ul.list-inline.banner-social-buttons
+        %li
+          %a.btn.btn-default.btn-lg{:href => "https://twitter.com/"}
+            %i.fa.fa-twitter.fa-fw
+            %span.network-name Twitter
+        %li
+          %a.btn.btn-default.btn-lg{:href => "https://github.com"}
+            %i.fa.fa-github.fa-fw
+            %span.network-name Github
+        %li
+          %a.btn.btn-default.btn-lg{:href => "https://plus.google.com"}
+            %i.fa.fa-google-plus.fa-fw
+            %span.network-name Google+
